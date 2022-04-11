@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: stripe
+    description: A clone of a postgress application database.
+    database: raw
+
+    schema: stripe
+    tables:
+      - name: payment
+        description: raw payments data.
+        columns:
+          - name: id
+            description: Primary key for payments
+            tests:
+              - unique
+              - not_null
+          - name: OrderId
+            description: foreing key Order id 
+          - name: PaymentnMethod
+            description: Payments Methods for payment raw data
+          - name: Status
+            description: Status of transaction of payments
+          - name: Amount
+            description: Amount of money of the payment
+          - name: Created
+            description: Date of payment transaction  
